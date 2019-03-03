@@ -206,7 +206,7 @@ binaryName=''; readParameter binaryName 'sonar.swift.appName'
 # Get the path of plist file
 plistFile=`xcodebuild -showBuildSettings -project "${projectFile}" | grep -i 'PRODUCT_SETTINGS_PATH' -m 1 | sed 's/[ ]*PRODUCT_SETTINGS_PATH = //'`
 # Number version from plist if no sonar.projectVersion
-numVerionFromPlist=`defaults read ${plistFile} CFBundleShortVersionString`
+numVerionFromPlist=`defaults read "${plistFile}" CFBundleShortVersionString`
 
 # Read destination simulator
 destinationSimulator=''; readParameter destinationSimulator 'sonar.swift.simulator'
